@@ -2,7 +2,7 @@ const express = require("express");
 const uuid = require("uuid");
 const router = express.Router();
 const fs = require("fs");
-const notes = require("../../Notes.js");
+const notes = require("../../sample.js");
 
 // API ROUTES
 
@@ -34,7 +34,7 @@ router.delete("/:id", (req, res) => {
   for (let i = 0; i < notes.length; i++) {
     notes[i].id = i;
   }
-  fs.writeFile("../../Notes.js", JSON.stringify(notes), (err) => {
+  fs.writeFile("../../sample.js", JSON.stringify(notes), (err) => {
     if (err) {
       throw err;
     }
